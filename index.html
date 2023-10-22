@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Service</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="./css/bootstrap-grid.css">
+    <link rel="stylesheet" href="./css/bootstrap-grid.rtl.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="./css/bootstrap-reboot.rtl.css">
+    <link rel="stylesheet" href="./css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="./css/bootstrap-utilities.rtl.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/icons/bootstrap-icons.css">
+    <link rel="icon" href="./images/logo.png">
+    <script defer src="./js/bootstrap.bundle.js"></script>
+    <script defer src="./js/bootstrap.esm.js"></script>
+    <script defer src="./js/bootstrap.js"></script>
+    <script defer src="./js/index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="side-bar-form" class="side-bar-form">
+        <div class="side-bar-form-container">
+            <button
+                    id="close-button"
+                    type="button"
+                    class="btn-close btn-close-white"
+                    aria-label="Close"
+                    onclick="closeSideBar()"
+            ></button>
+            <div class="geo-block">
+                <img src="./images/geo.png" alt="geo mark" class="geo-image" onclick="toGoogleMaps()">
+                <span class="small-text" onclick="toGoogleMaps()">вул. Добрининська 8, Київ</span>
+            </div>
+            <div class="social-media-section">
+                <i class="online-circle"></i>
+                <div class="social-media-question small-text">
+                    <strong>Запитайте Ваше</strong><br>Питання ONLINE
+                </div>
+                <img src="./images/telegram.png" alt="telegram" class="social-media-icon-selection telegram-ico">
+                <img src="./images/instagram.png" alt="instagram" class="social-media-icon-selection instagram-ico">
+            </div>
+            <div class="direct-contact">
+                <div class="contact-alert"><i class="online-circle"></i>Цілодобовий, без вихідних</div>
+                <a class="contact-phone" href="tel:+380996289583">+38 099 628 9583</a>
+                <span class="contact-text dotted">Перезвонимо за 30 секунд</span>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="header-container">
+            <div class="header-content">
+                <div class="logo-block">
+                    <div class="logo-container">
+                        <img src="./images/logo.png" alt="logo" class="logo">
+                    </div>
+                    <div class="small-screen-display-none">
+                        <strong>Розумний автосервіс <br>повного циклу</strong> на <br>Правом березі Києва
+                    </div>
+                </div>
+                <div class="geo-block small-screen-display-none">
+                    <img src="./images/geo.png" alt="geo mark" class="geo-image" onclick="toGoogleMaps()">
+                    <span class="small-text" onclick="toGoogleMaps()">вул. Добрининська 8, Київ</span>
+                </div>
+                <div class="social-media-section">
+                    <i class="online-circle small-screen-display-none"></i>
+                    <div class="social-media-question small-text small-screen-display-none">
+                        <strong>Запитайте Ваше</strong><br>Питання ONLINE
+                    </div>
+                    <img src="./images/telegram.png" alt="telegram" class="social-media-icon-selection telegram-ico">
+                    <img src="./images/instagram.png" alt="instagram" class="social-media-icon-selection instagram-ico small-screen-display-none">
+                    <img src="./images/red-phone.png" alt="red phone" class="social-media-icon-selection red-phone-ico small-screen-display">
+                </div>
+                <div class="direct-contact small-screen-display-none">
+                    <div class="contact-alert"><i class="online-circle"></i>Цілодобовий, без вихідних</div>
+                    <span class="contact-phone" href="tel:+380996289583">+38 099 628 9583</span>
+                    <span class="contact-text dotted">Перезвонимо за 30 секунд</span>
+                </div>
+                <div class="side-menu-wrap small-screen-display" onclick="openSideBar()">
+                    <div class="app-side-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="background-image-selection">
+            <div class="background-image-container">
+                <img class="background-image-containered" src="./images/explanation.jpeg" alt="explanation image">
+            </div>
+            <div class="explanation-content">
+                <h1 class="t54 mb2 fw3">
+                    <strong>Ремонтуємо та обслуговуємо<br> автомобілі</strong>  бережно, з <br>  любов'ю, як для себе
+                </h1>
+                <div class="row-explanation-text">
+                    <div class="app-line-text"></div>
+                    <div>
+                        <strong>Розумний автосеріс</strong> повного циклу
+                    </div>
+                </div>
+                <div class="additional-explanation">
+                    <div class="additional-explanation-text">
+                        В 2-х словах <strong>опишіть</strong> задачу, <strong>сфоткайте</strong> і <br>
+                        <strong>отримайте</strong> точну вартість вже за 30 секунд
+                    </div>
+                    <div class="explanation-instruction">
+                        <img
+                                class="instruction-image"
+                                src="./images/explanation-instruction.png"
+                                alt="explanation instruction"
+                        >
+                        <img class="explanation-arrow small-screen-display-none" src="./images/arrow.png" alt="arrow">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="support-marks">
+            <div class="support-marks-header">
+                <h3>
+                    <strong>
+                        Обслуговуємо усі популярні марки
+                    </strong> легкових автомобілів для фізичних та юридичних осіб
+                </h3>
+            </div>
+            <div class="support-marks-container" id="support-marks-container">
+                <div>
+                    <button class="carousel-arrow slidePrev" onclick="carouselPrevious()">
+                        <img src="./images/carousel/left-arrow.svg" alt="left arrow">
+                    </button>
+                    <div class="custom-carousel"><div class="custom-carousel-side" id="carousel"></div></div>
+                    <button class="carousel-arrow slideNext" onclick="carouselNext()">
+                        <img src="./images/carousel/right-arrow.svg" alt="right arrow">
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="background-image-selection shot-description">
+            <div class="background-image-container">
+                <img class="background-image-containered" src="./images/short-description.jpeg" alt="short description">
+            </div>
+            <div class="short-service-description">
+                <h2 class="short-description-header mb2">
+                    <strong>Доброго дня!</strong> Unlimited Service гарантує: </h2>
+                <div class="short-description-options">
+                    <div class="short-description-option">
+                        <div class="option-image-container">
+                            <img src="./images/short-description-1-1.png" alt="1-1">
+                        </div>
+                        <div class="option-index">01 </div>
+                        <div class="option-text">
+                            <div class="header">Чесність нашої <br> команди щодо <br> до вас і вашого авто</div>
+                            <div class="text">Ставимося до вашого авто як до свого </div>
+                        </div>
+                    </div>
+                    <div class="short-description-option">
+                        <div class="option-image-container">
+                            <img src="./images/short-description-2-1.png" alt="2-1">
+                        </div>
+                        <div class="option-index">02 </div>
+                        <div class="option-text">
+                            <div class="header">Якісне та<br> професійне<br> виконання кожної<br> функції </div>
+                            <div class="text">Подвійний контроль якості кожного виду робіт </div>
+                        </div>
+                    </div>
+                    <div class="short-description-option">
+                        <div class="option-image-container">
+                            <img src="./images/short-description-3-1.png" alt="3-1">
+                        </div>
+                        <div class="option-index">03 </div>
+                        <div class="option-text">
+                            <div class="header">Рівень сервісу,<br> безпеки та<br> надійності </div>
+                            <div class="text">Пропонуємо теплу зону очікування, безкоштовний WI-FI, чай, каву </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="car-image">
+                    <img src="./images/car.png" alt="car">
+                </div>
+            </div>
+        </section>
+        <section class="services-tab">
+            <div class="services-header">
+                <h2>Усі послуги в одному місці </h2>
+                <div>
+                    Несемо повну відповідальність і надаємо безстрокову гарантію на всі послуги
+                </div>
+            </div>
+            <div class="serv-card">
+                <div class="serv-item white rel">
+                    <div class="st-bg">
+                        <img src="./images/service-card/1.jpg" alt="">
+                    </div>
+                    <div class="serv-item__cont col-vcenter">
+                        <div class="serv-item__top col-vcenter">
+                            <a class="serv-item__header t38 mb2 fwb">
+                                Майстерня з ремонту ДВЗ
+                            </a>
+                            <ul class="t16">
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Ремонт бензинових двигунів</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Ремонт дизельних двигунів</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Усі послуги</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="serv-bot sb-center">
+                            <div class="serv-bot__right col-center">
+                                <div class="kr-text mbs">
+                                    <i class="online-circle"></i>
+                                    <div class="kr-text__text t13">
+                                        Цілодобово, без вихідних
+                                    </div>
+                                </div>
+                                <div class="serv-bot__link white t16 row-vcenter">
+                                    <a class="serv-bot__link-img mrm">
+                                        <img src="./images/tg-ico.png" alt="">
+                                    </a>
+                                    <a href="tel:+380735553777" class="dotted white dotted_d">
+                                        +38 073 555 37 77
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="serv-item white rel">
+                    <div class="st-bg">
+                        <img src="./images/service-card/3.jpg" alt="">
+                    </div>
+                    <div class="serv-item__cont col-vcenter">
+                        <div class="serv-item__top col-vcenter">
+                            <a class="serv-item__header t38 mb2 fwb">
+                                Електрика
+                            </a>
+                            <ul class="t16">
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Встановлення сигналізацій</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Встановлення парктроніків</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Встановлення дод. обладнання всередині салону</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Встановлення Android Apple</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Мультимедійна система</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Встановлення звукових систем</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Встановлення дод. обладнання</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="serv-bot sb-center">
+                            <div class="serv-bot__right col-center">
+                                <div class="kr-text mbs">
+                                    <i class="online-circle"></i>
+                                    <div class="kr-text__text t13">
+                                        Цілодобово, без вихідних
+                                    </div>
+                                </div>
+                                <div class="serv-bot__link white t16 row-vcenter">
+                                    <a class="serv-bot__link-img mrm">
+                                        <img src="./images/tg-ico.png" alt="">
+                                    </a>
+                                    <a href="tel:+380735553777" class="dotted white dotted_d">
+                                        +38 073 555 37 77
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="serv-item white rel">
+                    <div class="st-bg">
+                        <img src="./images/service-card/4.jpg" alt="">
+                    </div>
+                    <div class="serv-item__cont col-vcenter">
+                        <div class="serv-item__top col-vcenter">
+                            <a class="serv-item__header t38 mb2 fwb">
+                                Ремонт АКПП
+                            </a>
+                            <ul class="t16">
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Powershift</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">АКПП повноцінний</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Роботи</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Варіатори</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Окремі вузли коробки</a>
+                                    <ul class="sub">
+                                        <li><a class="custom-link">Гідроблок</a></li>
+                                        <li><a class="custom-link">Фрикціони</a></li>
+                                        <li><a class="custom-link">Гідротрансформатор</a></li>
+                                        <li><a class="custom-link">Мехатронік соленоїди</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="serv-bot sb-center">
+                            <div class="serv-bot__right col-center">
+                                <div class="kr-text mbs">
+                                    <i class="online-circle"></i>
+                                    <div class="kr-text__text t13">
+                                        Цілодобово, без вихідних
+                                    </div>
+                                </div>
+                                <div class="serv-bot__link white t16 row-vcenter">
+                                    <a class="serv-bot__link-img mrm">
+                                        <img src="./images/tg-ico.png" alt="">
+                                    </a>
+                                    <a href="tel:+380735553777" class="dotted white dotted_d">
+                                        +38 073 555 37 77
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="serv-item white rel">
+                    <div class="st-bg">
+                        <img src="./images/service-card/5.jpg" alt="">
+                    </div>
+                    <div class="serv-item__cont col-vcenter">
+                        <div class="serv-item__top col-vcenter">
+                            <a class="serv-item__header t38 mb2 fwb">
+                                Слесарний цех
+                            </a>
+                            <ul class="t16">
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Регулярні регламентні<br> роботи по ТО</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Заміна масла і фільтра</a>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a class="custom-link">Заміна колодок</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="serv-bot sb-center">
+                            <div class="serv-bot__right col-center">
+                                <div class="kr-text mbs">
+                                    <i class="online-circle"></i>
+                                    <div class="kr-text__text t13">
+                                        Цілодобово, без вихідних
+                                    </div>
+                                </div>
+                                <div class="serv-bot__link white t16 row-vcenter">
+                                    <a class="serv-bot__link-img mrm">
+                                        <img src="./images/tg-ico.png" alt="">
+                                    </a>
+                                    <a href="tel:" class="dotted white dotted_d">
+                                        +38 073 555 37 77
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="serv-item serv-item_alt white rel">
+                    <div class="st-bg">
+                        <img src="./images/service-card/alt.jpg" alt="">
+                    </div>
+                    <div class="serv-item__cont col-vcenter">
+                        <div class="serv-item__top col-vcenter">
+                            <div class="serv-item__header t38 mb2 fwb">
+                                <span class="wh-span red">Продаж</span> <br> запчастин і <br> деталей кузова
+                            </div>
+                            <div class="dnld-cir col-center tac">
+                                <div class="dnld-cir__img">
+                                    <img src="./images/service-card/cir-text.png" alt="">
+                                </div>
+                                <div class="dnld-cir__text fwb black fwb col-center tac">
+                                    <div class="ttu red t15">ОРИГІНАЛ</div>
+                                </div>
+                            </div>
+                            <a class="dotted dotted_l white btn-call4-js fw5 t16 row-vcenter ">
+                                <div>Дізнатися вартість запчастини</div>
+                                <div class="st-link__arrow col-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" x="0" y="0" viewBox="0 0 64 64"  xml:space="preserve" class=""><g><path xmlns="http://www.w3.org/2000/svg" d="m37.379 12.552c-.799-.761-2.066-.731-2.827.069-.762.8-.73 2.066.069 2.828l15.342 14.551h-39.963c-1.104 0-2 .896-2 2s.896 2 2 2h39.899l-15.278 14.552c-.8.762-.831 2.028-.069 2.828.393.412.92.62 1.448.62.496 0 .992-.183 1.379-.552l17.449-16.62c.756-.755 1.172-1.759 1.172-2.828s-.416-2.073-1.207-2.862z" data-original="#000000" style=""></path></g></svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="serv-alt__right col-center">
+                    <div class="serv-item rel cost-it col-vcenter">
+                        <div class="st-bg">
+                            <img src="./images/service-card/alt2.jpg" alt="">
+                        </div>
+                        <div class="serv-item__cont cost-it__cont col-vcenter">
+                            <div class="serv-item__top">
+                                <div class="cost-it__header mb2 t38 fwb wh-span">
+                                    Вартість
+                                </div>
+                                <div class="white mb2 fw2 t16">
+                                    Вартість ремонту або обслуговування<br> вашого авто обчислюється індивідуально.<br>
+                                    <br> Ви можете розрахувати приблизну<br> вартість у нашому калькуляторі
+                                </div>
+                                <a href="" class="dotted dotted_d red fwb t17 row-vcenter btn-call4-js">
+                                    <div>Дивитися вартість</div>
+                                    <div class="st-link__arrow col-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" x="0" y="0" viewBox="0 0 64 64" xml:space="preserve" class=""><g><path xmlns="http://www.w3.org/2000/svg" d="m37.379 12.552c-.799-.761-2.066-.731-2.827.069-.762.8-.73 2.066.069 2.828l15.342 14.551h-39.963c-1.104 0-2 .896-2 2s.896 2 2 2h39.899l-15.278 14.552c-.8.762-.831 2.028-.069 2.828.393.412.92.62 1.448.62.496 0 .992-.183 1.379-.552l17.449-16.62c.756-.755 1.172-1.759 1.172-2.828s-.416-2.073-1.207-2.862z" data-original="#000000" style=""></path></g></svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="price-it col-vcenter">
+                        <input type="hidden" name="title" value="Заявка на отримання прайсу">
+                        <input type="hidden" name="formname" value="price">
+                        <div class="tac-900 t38 fwb mbm">
+                            Прайс
+                        </div>
+                        <div class="tac-900 t15 fw5">
+                            Також запитайте прайс на потрібну<br> вам послугу прямо зараз
+                        </div>
+                        <div class="price-it__list col-center">
+                            <img src="./images/service-card/list.png" alt="">
+                            <div class="dnld-cir col-center tac">
+                                <div class="dnld-cir__img">
+                                    <img src="./images/service-card/cir-text.png" alt="">
+                                </div>
+                                <div class="dnld-cir__text fwb black col-center tac">
+                                    <div class="ttu t14 fwb">PDF</div>
+                                    <div class="t13 fw6">1,2 Мб</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="price-it__inp-bl">
+                            <div class="price-it__gray mbs t13">
+                                Оберіть прайс:
+                            </div>
+                            <div class="fancy-select">
+                            <select required="" name="var1" class="input fancyselect fancified" style="width: 1px; height: 1px; display: block; position: absolute; top: 0px; left: 0px; opacity: 0;">
+                                <option value="Ремонт двигунів">Ремонт двигунів</option>
+                                <option value="Кузовні роботи">Кузовні роботи</option>
+                                <option value="Електрика">Електрика</option>
+                                <option value="Ремонт АКПП">Ремонт АКПП</option>
+                                <option value="Зміна масла">Зміна масла</option>
+                                <option value="Проходження ТО">Проходження ТО</option>
+                                <option value="Детейлінг">Детейлінг</option>
+                            </select><div class="trigger">Ремонт двигунів</div><ul class="options"><li data-raw-value="Ремонт двигунів" class="selected">Ремонт двигунів</li><li data-raw-value="Кузовні роботи">Кузовні роботи</li><li data-raw-value="Електрика">Електрика</li><li data-raw-value="Ремонт АКПП">Ремонт АКПП</li><li data-raw-value="Зміна масла">Зміна масла</li><li data-raw-value="Проходження ТО">Проходження ТО</li><li data-raw-value="Детейлінг">Детейлінг</li></ul></div>
+                            <div class="price-it__gray t13 mbs">
+                                Номер телефону
+                            </div>
+                            <input required="" type="tel" name="phone" class="input mbm t15" placeholder="+38 (***) *** ** **">
+                            <button class="btn price-it__btn b-ws mbm">
+                                <span class="btn-blick"></span>
+                                <span class="btn-img col-center mr">
+                                <img class=" lazyloaded" src="./images/service-card/tg.svg" data-src="img/tg.svg" alt="">
+                            </span>
+                                <span class="white t14 tal fw2">
+                                Отримати прайс на Telegram
+                            </span>
+                            </button>
+                            <label for="qtm1" class="check-box">
+                                <input type="checkbox" name="mmm3" id="qtm1" class="rhide modal-checkbox" required="" checked="" value="">
+
+                                <span class="check-line v2">
+                                <span class="check-label">
+                                    <span class="check-label-act"><img class=" lazyloaded" src="./images/service-card/check.svg" data-src="wp-content/themes/adz-wp/assets/img/icons/check.svg" alt=""></span>
+                                </span>
+
+                                <span class="t16 fw5 tal">
+                                    <a href="#" target="_blank" class="black link-hover t12 fwb btn-politics-js">Згода на обробку персональних даних</a>
+                                </span>
+                            </span>
+                            </label>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="serv__bl alt-container"></div>
+        </section>
+    </main>
+</body>
+</html>
