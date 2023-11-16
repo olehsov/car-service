@@ -1,7 +1,8 @@
 "use strict"
-const GEO_LINK = 'https://www.google.co.uk/maps/place/%D1%83%D0%BB.+%D0%94%D0%BE%D0%B1%D1%80%D1%8B%D0%BD%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F,+8,+%D0%9A%D0%B8%D0%B5%D0%B2,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+02000/@50.4999716,30.4774164,16.69z/data=!4m6!3m5!1s0x40d4d20abd19fd83:0x22ef7fa2c6e81bf6!8m2!3d50.5002946!4d30.4824313!16s%2Fg%2F11c17y6jwp?entry=ttu';
+const GEO_LINK = 'https://maps.app.goo.gl/T4MzyWD7CYGcHX1M7?g_st=ic';
 const MOVE_SIZE = 161;
 const sideBarForm = document.getElementById('side-bar-form');
+const modal = document.getElementById('modal-call4');
 
 const marLogos = [
     'audi_logo.png',
@@ -21,12 +22,34 @@ const marLogos = [
     'volkswagen_logo.png',
     'volvo_logo-1.png'
 ];
-const carousel = document.getElementById('carousel');
+const serviceViews = [
+    { img: 'DSC_3191.jpg', header: 'Діагностика та ремонт ходової' },
+    { img: 'DSC_3095.jpg', header: 'Комплексна діагностика та ремонт двигуна'},
+    { img: 'DSC_2937.jpg', header: 'Розвал-сходження 3D'},
+    { img: 'DSC_3207.jpg', header: 'Заправка кондиціонера'},
+    { img: 'DSC_3120.jpg', header: 'Ремонт та заміна гальмівної частини'},
+    { img: 'DSC_3218.jpg', header: 'Продаж запчастин'},
+    { img: 'DSC_2949.jpg', header: 'Діагностика авто перед покупкою'},
+    { img: 'DSC_3092.jpg', header: 'Комп\'ютерна діагностика'},
+    { img: 'DSC_3068.jpg', header: 'Заміна ГРМ'},
+    { img: 'DSC_2967.jpg', header: 'Проточка гальмівних дисків'}
+];
 
+const workCarousel = document.getElementById('carousel-inner');
+
+const carousel = document.getElementById('carousel');
+const services = document.getElementById('serv-card');
+const phone = '+380979034777';
 let carouselLeftOffset = 0;
 const toGoogleMaps = () => window.open(GEO_LINK, '_blank');
+const toTelegram = () => window.open("https://t.me/olehAmerica")
+const toCall = () => window.open(`tel:${phone}`)
+const toInstagram = () => window.open('https://www.instagram.com/dacar_service.cv/', '_blank')
 const openSideBar = () => sideBarForm.classList.add('opened');
 const closeSideBar = () => sideBarForm.classList.remove('opened');
+
+const openModal = () => modal.style.display = 'block';
+const closeModal = () => modal.style.display = 'none';
 
 const renderCarousel = () =>
     carousel.innerHTML = marLogos.map(buildCarCard).reduce((accumulator, card) => accumulator + card, '');
@@ -62,7 +85,46 @@ const resizeCarousel = () => {
     supportMarksContainer.style.maxWidth = carouselWith;
 }
 
+const renderServices = () => {
+    const servicesHtml = serviceViews.reduce((acc, view) => acc + buildServices(view.img, view.header), '');
+    services.innerHTML = servicesHtml + services.innerHTML;
+}
+
+const buildServices = (img, header) => {
+    return `<div class="serv-item white rel">
+                <div class="st-bg">
+                    <img src="./images/service-card/${img}" alt="${header}" loading="eager">
+                </div>
+                <div class="serv-item__cont col-vcenter">
+                    <div class="serv-item__top col-vcenter">
+                        <a class="serv-item__header t38 mb2 fwb">${header}</a>
+                    </div>
+                    <div class="serv-bot sb-center">
+                        <div class="serv-bot__right col-center">
+                            <div class="serv-bot__link white t16 row-vcenter">
+                                <a class="serv-bot__link-img mrm">
+                                    <img onclick="toTelegram()" src="./images/tg-ico.png" alt="">
+                                </a>
+                                <a onclick="toCall()" class="dotted white dotted_d phone-link">${phone}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+}
+
+const buildWorkCarouselItem = (img, header) => {
+    return `<div class="carousel-item active">
+                <img src="./images/service-card/${img}" alt="${header}" class="d-block w-100">
+            </div>`
+}
+const renderWorksCarousel = () => {
+    services.innerHTML = serviceViews.reduce((acc, view) => acc + buildWorkCarouselItem(view.img, view.header), '');
+}
+
 (function() {
+    renderServices();
+    //renderWorksCarousel();
     addEventListener("resize", () => resizeCarousel());
     renderCarousel();
     resizeCarousel();
