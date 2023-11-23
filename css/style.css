@@ -1331,7 +1331,7 @@ div.fancy-select ul.options li {
     margin-bottom: 0.41rem;
 }
 
-.btn.b-ws {
+.btnc.b-ws {
     padding: 1.1rem 1.9rem;
     background-color: #00a2f1;
     border-radius: 3rem;
@@ -1345,7 +1345,7 @@ div.fancy-select ul.options li {
     width: 100%;
 }
 
-.btn {
+.btnc {
     padding: 1.35rem 1.9rem;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -1366,7 +1366,7 @@ div.fancy-select ul.options li {
     background-color: #41B4E6;
 }
 
-.btn:not(:disabled) .btn-blick {
+.btnc:not(:disabled) .btn-blick {
     position: absolute;
     left: 0;
     top: 0;
@@ -1376,7 +1376,7 @@ div.fancy-select ul.options li {
     overflow: hidden;
 }
 
-.btn:not(:disabled) .btn-blick:after {
+.btnc:not(:disabled) .btn-blick:after {
     margin-left: -30px;
     content: " ";
     width: 30px;
@@ -1401,7 +1401,7 @@ div.fancy-select ul.options li {
     transform: rotate(45deg);
 }
 
-.btn.b-ws .btn-img {
+.btnc.b-ws .btn-img {
     width: 1.5rem;
     height: 2rem;
     position: absolute;
@@ -1835,13 +1835,13 @@ div.fancy-select ul.options li {
     width: 26.8%;
 }
 
-.offer-form__inp-bl .btn {
+.offer-form__inp-bl .btnc {
     width: 100%;
     padding-top: 1.3rem;
     padding-bottom: 1.3rem;
 }
 
-.btn:not(:disabled) .btn-blick {
+.btnc:not(:disabled) .btn-blick {
     position: absolute;
     left: 0;
     top: 0;
@@ -2037,11 +2037,11 @@ div.fancy-select ul.options li {
     font-size: .68rem;
 }
 
-.modal-call .btn {
+.modal-call .btnc {
     width: 100%;
 }
 
-.btn:not(:disabled) .btn-blick {
+.btnc:not(:disabled) .btn-blick {
     position: absolute;
     left: 0;
     top: 0;
@@ -2063,11 +2063,11 @@ div.fancy-select ul.options li {
     cursor: pointer;
 }
 
-.offer-form__inp-bl .btn:hover {
+.btnc:hover {
     background-color: #41B4E6;
 }
 
-.offer-form__inp-bl .btn:hover span {
+.btnc:hover  span{
     transition: all 0.3s;
     font-size: .95rem;
 }
@@ -2338,11 +2338,11 @@ div.fancy-select ul.options li {
         padding-left: 2rem;
     }
 
-    .offer-form__bl .btn {
+    .offer-form__bl .btnc {
         margin-top: 0.5rem;
     }
 
-    .offer-form__bl .btn {
+    .offer-form__bl .btnc {
         width: 100%;
     }
 

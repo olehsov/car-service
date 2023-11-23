@@ -233,7 +233,7 @@
                     <h2 class="fw3 mb title-lg fade_in">
                         <span class="fwb">Прямо зараз залиште заявку</span> і <br> дізнайтеся вартість <br> ремонту в різних цінових категоріях
                     </h2>
-                    <form class="offer-form">
+                    <div class="offer-form">
                         <input type="hidden" name="title" value="Заявка на вартість ремонту">
                         <input type="hidden" name="formname" value="call">
                         <div class="mbm t30 fwb">
@@ -241,10 +241,10 @@
                         </div>
                         <div class="offer-form__bl">
                             <div class="offer-form__inp-bl col-vcenter col-vcenter">
-                                <input required="" type="text" name="name" class="input mbm t15" placeholder="Ваше імʼя">
+                                <input id="user-name" required="" type="text" name="name" class="input mbm t15" placeholder="Ваше імʼя">
                             </div>
                             <div class="offer-form__inp-bl col-vcenter">
-                                <input required="" type="tel" name="phone" class="input mbm t15" placeholder="+38 (***) *** ** **">
+                                <input id="user-phone" required="" type="tel" name="phone" class="input mbm t15" placeholder="+38 (***) *** ** **">
                                 <label for="qtmsss2" class="check-box">
                                     <input type="checkbox" name="mmm3" id="qtmsss2" class="rhide modal-checkbox" required="" checked="" value="">
                                     <span class="check-line v2">
@@ -258,7 +258,7 @@
                                 </label>
                             </div>
                             <div class="offer-form__inp-bl col-vcenter">
-                                <button class="btn mbm">
+                                <button class="btnc mbm" id="check-price">
                                     <span class="btn-blick"></span>
                                     <span class="white t17 tal fwb">
                                     Дізнатися вартість
@@ -277,7 +277,7 @@
                             </span>
                         </span>
                         </label>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -297,10 +297,10 @@
                         <div class="modal-call__inp-text modal-gray mbs t13">
                             Номер телефону
                         </div>
-                        <input required="" type="tel" name="phone" class="input i-white t15" placeholder="+38 (***) *** ** **">
+                        <input  id="modal-user-phone" required="" type="tel" name="phone" class="input i-white t15" placeholder="+38 (***) *** ** **">
                     </div>
                     <div class="modal-call__item mbm">
-                        <button class="btn">
+                        <button class="btnc" id="check-price-modal">
                             <span class="btn-blick"></span>
                             <span class="white t15 tac fw5 lsp">
                             Чекаю дзвінка
@@ -317,7 +317,7 @@
                             </span>
 
                             <span class="t16 fw5 tal">
-                                <a class="white link-hover t12 fw3 btn-politics-js">Згода на обробку персональних даних</a>
+                                <a class="white t12 fw3 btn-politics-js">Згода на обробку персональних даних</a>
                             </span>
                         </span>
                         </label>

@@ -1,8 +1,16 @@
 "use strict"
+
+const BOT_TOKEN = '6199783028:AAE9eiRsxImc7fl6tGhirx-yDH1ubpFtozM';
+const TELEGRAM_URL = `https://api.telegram.org/bot${BOT_TOKEN}`
+const TELEGRAM_CHAT_ID = 549446871;
+const PHONE = '+380979034777';
 const GEO_LINK = 'https://maps.app.goo.gl/T4MzyWD7CYGcHX1M7?g_st=ic';
 const MOVE_SIZE = 161;
+
 const sideBarForm = document.getElementById('side-bar-form');
 const modal = document.getElementById('modal-call4');
+const checkPriceButton = document.getElementById('check-price');
+const checkPriceModalButton = document.getElementById('check-price-modal');
 
 const marLogos = [
     'audi_logo.png',
@@ -64,11 +72,10 @@ const workCarousel = document.getElementById('carousel-inner');
 
 const carousel = document.getElementById('carousel');
 const services = document.getElementById('serv-card');
-const phone = '+380979034777';
 let carouselLeftOffset = 0;
 const toGoogleMaps = () => window.open(GEO_LINK, '_blank');
-const toTelegram = () => window.open("https://t.me/olehAmerica")
-const toCall = () => window.open(`tel:${phone}`)
+const toTelegram = () => window.open(`https://t.me/olehAmeica`)
+const toCall = () => window.open(`tel:${PHONE}`)
 const toInstagram = () => window.open('https://www.instagram.com/dacar_service.cv/', '_blank')
 const openSideBar = () => sideBarForm.classList.add('opened');
 const closeSideBar = () => sideBarForm.classList.remove('opened');
@@ -130,7 +137,7 @@ const buildServices = (img, header) => {
                                 <a class="serv-bot__link-img mrm">
                                     <img onclick="toTelegram()" src="./images/tg-ico.png" alt="">
                                 </a>
-                                <a onclick="toCall()" class="dotted white dotted_d phone-link">${phone}</a>
+                                <a onclick="toCall()" class="dotted white dotted_d phone-link">${PHONE}</a>
                             </div>
                         </div>
                     </div>
@@ -154,11 +161,47 @@ const renderWorksCarousel = () => {
     workCarousel.innerHTML = carouselImages.reduce((acc, image, idx) => acc + buildWorkCarouselItem(image, idx), '');
 }
 
+const sendMessage = async (phone, name) => {
+    let text = `Прийшов запит з телефона: ${phone}`;
+    if (name) text += `(${name})`;
+
+    try {
+        const response = await fetch(`${TELEGRAM_URL}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text }),
+        });
+
+        const result = await response.json();
+        console.log('Message sent:', result);
+    } catch (error) {
+        console.error('Error sending message:', error);
+    }
+};
+
 (function() {
     renderServices();
     renderWorksCarousel();
     addEventListener("resize", () => resizeCarousel());
     renderCarousel();
     resizeCarousel();
+
+    checkPriceButton.addEventListener('click', async $event => {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        const userPhone = document.getElementById('user-phone').value;
+        const userName = document.getElementById('user-name').value;
+
+        await sendMessage(userPhone, userName)
+    })
+
+    checkPriceModalButton.addEventListener('click', async $event => {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        const userPhone = document.getElementById('modal-user-phone').value;
+        await sendMessage(userPhone)
+    })
 })();
 
