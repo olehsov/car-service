@@ -3,21 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Service</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/fancybox.css"/>
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/bootstrap.rtl.css">
-    <link rel="stylesheet" href="./css/bootstrap-grid.css">
-    <link rel="stylesheet" href="./css/bootstrap-grid.rtl.css">
-    <link rel="stylesheet" href="./css/bootstrap-reboot.css">
-    <link rel="stylesheet" href="./css/bootstrap-reboot.rtl.css">
-    <link rel="stylesheet" href="./css/bootstrap-utilities.css">
-    <link rel="stylesheet" href="./css/bootstrap-utilities.rtl.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/icons/bootstrap-icons.css">
     <link rel="icon" href="./images/logos/fav-icon.png">
-    <script defer src="./js/bootstrap.bundle.js"></script>
-    <script defer src="./js/bootstrap.esm.js"></script>
-    <script defer src="./js/bootstrap.js"></script>
+    <script defer src="./js/bootstrap.min.js"></script>
     <script defer src="./js/index.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -33,7 +24,7 @@
             ></button>
             <div class="geo-block">
                 <img src="./images/geo.png" alt="geo mark" class="geo-image" onclick="toGoogleMaps()">
-                <span class="small-text" onclick="toGoogleMaps()">вул. Добрининська 8, Київ</span>
+                <span class="small-text" onclick="toGoogleMaps()">вулиця Чернівецька 46, Чернівці</span>
             </div>
             <div class="social-media-section">
                 <i class="online-circle"></i>
@@ -44,9 +35,8 @@
                 <img src="./images/instagram.png" onclick="toInstagram()" alt="instagram" class="social-media-icon-selection instagram-ico">
             </div>
             <div class="direct-contact">
-                <div class="contact-alert"><i class="online-circle"></i>Цілодобовий, без вихідних</div>
-                <a class="contact-phone phone-link" onclick="toCall()">+38 099 628 9583</a>
-                <span class="contact-text dotted black" onclick="openModal()">Перезвонимо за 30 секунд</span>
+                <a class="contact-phone phone-link" onclick="toCall()">+38 097 903 4777</a>
+                <span class="contact-text dotted black" onclick="openModal()">Перезвонимо за декілька хвилин</span>
             </div>
         </div>
     </div>
@@ -75,7 +65,6 @@
                     <img src="./images/red-phone.png" onclick="toCall()" alt="red phone" class="social-media-icon-selection red-phone-ico small-screen-display">
                 </div>
                 <div class="direct-contact small-screen-display-none">
-                    <div class="contact-alert"><i class="online-circle"></i>Цілодобовий, без вихідних</div>
                     <span class="contact-phone" onclick="toCall()">+38 (097) 903 47 77</span>
                     <span class="contact-text dotted black" onclick="openModal()">Перезвонимо за 30 секунд</span>
                 </div>
@@ -92,7 +81,7 @@
     <main>
         <section class="background-image-selection">
             <div class="background-image-container">
-                <img class="background-image-containered" src="./images/explanation.jpeg" alt="explanation image">
+                <img class="background-image-containered" src="./images/explanation.jpg" alt="explanation image">
             </div>
             <div class="explanation-content">
                 <h1 class="t54 mb2 fw3">
@@ -131,27 +120,24 @@
             <div class="support-marks-container" id="support-marks-container">
                 <div>
                     <button class="carousel-arrow slidePrev" onclick="carouselPrevious()">
-                        <img src="./images/carousel/left-arrow.svg" alt="left arrow">
+                        <img src="images/carousel-mark/left-arrow.svg" alt="left arrow">
                     </button>
                     <div class="custom-carousel"><div class="custom-carousel-side" id="carousel"></div></div>
                     <button class="carousel-arrow slideNext" onclick="carouselNext()">
-                        <img src="./images/carousel/right-arrow.svg" alt="right arrow">
+                        <img src="images/carousel-mark/right-arrow.svg" alt="right arrow">
                     </button>
                 </div>
             </div>
         </section>
         <section class="background-image-selection shot-description">
             <div class="background-image-container">
-                <img class="background-image-containered" src="./images/short-description.jpeg" alt="short description">
+                <img class="background-image-containered" src="./images/short-description.jpg" alt="short description">
             </div>
             <div class="short-service-description">
                 <h2 class="short-description-header mb2">
                     <strong>Доброго дня!</strong> Dacar Service гарантує: </h2>
                 <div class="short-description-options">
                     <div class="short-description-option">
-                        <div class="option-image-container">
-                            <img src="./images/short-description-1-1.png" alt="1-1">
-                        </div>
                         <div class="option-index">01 </div>
                         <div class="option-text">
                             <div class="header">Чесність нашої <br> команди щодо <br> до вас і вашого авто</div>
@@ -159,9 +145,6 @@
                         </div>
                     </div>
                     <div class="short-description-option">
-                        <div class="option-image-container">
-                            <img src="./images/short-description-2-1.png" alt="2-1">
-                        </div>
                         <div class="option-index">02 </div>
                         <div class="option-text">
                             <div class="header">Якісне та<br> професійне<br> виконання кожної<br> функції </div>
@@ -169,18 +152,12 @@
                         </div>
                     </div>
                     <div class="short-description-option">
-                        <div class="option-image-container">
-                            <img src="./images/short-description-3-1.png" alt="3-1">
-                        </div>
                         <div class="option-index">03 </div>
                         <div class="option-text">
                             <div class="header">Рівень сервісу,<br> безпеки та<br> надійності </div>
                             <div class="text">Пропонуємо теплу зону очікування, безкоштовний WI-FI, чай, каву </div>
                         </div>
                     </div>
-                </div>
-                <div class="car-image">
-                    <img src="./images/car.png" alt="car">
                 </div>
             </div>
         </section>
@@ -210,7 +187,7 @@
                     <div class="auto-left col-vcenter">
                         <div class="fwb mb2 title-lg fade_in">Наші роботи</div>
                         <div class="t32 fw3 small-screen-display-none">
-                            Працюємо з <span class="fwb">2019-го року </span> ми відремонтували, <br> обслужили і пофарбували <span class="fwb">велику кількість</span><br> автомобілів від преміум <br> авто - до авто будь якого класу</div>
+                            Працюємо з <span class="fwb">2019-го року </span> ми вже обслужили <span class="fwb">велику кількість</span> автомобілів різних цінових сегментів</div>
                         <div class="st-link small-screen-display-none">
                             <a onclick="toInstagram()" class="dotted dotted_d red fw5 t17 row-vcenter phone-link">
                                 <div>Дивитися більше прикладів робіт</div>
@@ -222,7 +199,18 @@
                     </div>
                 </div>
                 <div class="auto-right">
-
+                    <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="carousel-inner">
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="t32 fw3 small-screen-display mb-3">
                     За <span class="fwb">11 років роботи</span> ми відремонтували, <br> обслужили і пофарбували <span class="fwb">більше <br> 5000</span> автомобілів від преміум <br> авто - до середнього класу</div>
@@ -243,41 +231,8 @@
                 </div>
                 <div class="offer__wrap rel">
                     <h2 class="fw3 mb title-lg fade_in">
-                        <span class="fwb">Прямо зараз залиште заявку</span> і вже <br> через 1 хвилину дізнайтеся вартість <br> ремонту в 4 цінових категоріях </h2>
-                    <div class="offer__bl t24">
-                        <div class="offer__item col-vcenter">
-                            <div class="offer__text rel">
-                                <div class="offer__num t30 red fw5">
-                                    01 </div>
-                                <div class="fw3">
-                                    <span class="fwb">З оригінальними</span> <br> запчастинами </div>
-                            </div>
-                        </div>
-                        <div class="offer__item col-vcenter">
-                            <div class="offer__text rel">
-                                <div class="offer__num t30 red fw5">
-                                    02 </div>
-                                <div class="fw3">
-                                    <span class="fwb">З аналоговими</span> <br> запчастинами </div>
-                            </div>
-                        </div>
-                        <div class="offer__item col-vcenter">
-                            <div class="offer__text rel">
-                                <div class="offer__num t30 red fw5">
-                                    03 </div>
-                                <div class="fw3">
-                                    <span class="fwb">З вжитими</span> <br> запчастинами </div>
-                            </div>
-                        </div>
-                        <div class="offer__item col-vcenter">
-                            <div class="offer__text rel">
-                                <div class="offer__num t30 red fw5">
-                                    04 </div>
-                                <div class="fw3">
-                                    <span class="fwb">З вашими</span> <br> запчастинами </div>
-                            </div>
-                        </div>
-                    </div>
+                        <span class="fwb">Прямо зараз залиште заявку</span> і <br> дізнайтеся вартість <br> ремонту в різних цінових категоріях
+                    </h2>
                     <form class="offer-form">
                         <input type="hidden" name="title" value="Заявка на вартість ремонту">
                         <input type="hidden" name="formname" value="call">
@@ -297,7 +252,7 @@
                                         <span class="check-label-act"><img src="./images/check.svg" alt=""></span>
                                     </span>
                                     <span class="t16 fw5 white-space tal">
-                                        <a href="#" target="_blank" class="white link-hover t12 fw3 btn-politics-js">Угода щодо обробки персональних даних</a>
+                                        <a href="#" target="_blank" class="white t12 fw3 btn-politics-js">Угода щодо обробки персональних даних</a>
                                     </span>
                                 </span>
                                 </label>
@@ -318,7 +273,7 @@
                                 <span class="check-label-act"><img src="./images/check.svg" alt=""></span>
                             </span>
                             <span class="t16 fw5 white-space tal">
-                                <a class="white link-hover t12 fw3 btn-politics-js">Угода щодо обробки персональних даних</a>
+                                <a class="white t12 fw3 btn-politics-js">Угода щодо обробки персональних даних</a>
                             </span>
                         </span>
                         </label>

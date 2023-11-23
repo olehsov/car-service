@@ -34,6 +34,31 @@ const serviceViews = [
     { img: 'DSC_3068.jpg', header: 'Заміна ГРМ'},
     { img: 'DSC_2967.jpg', header: 'Проточка гальмівних дисків'}
 ];
+const carouselImages = [
+    'DSC_2860.jpg',
+    'DSC_2926.jpg',
+    'DSC_2947.jpg',
+    'DSC_2952.jpg',
+    'DSC_2967.jpg',
+    'DSC_3023.jpg',
+    'DSC_3038.jpg',
+    'DSC_3057.jpg',
+    'DSC_3095.jpg',
+    'DSC_3101.jpg',
+    'DSC_3108.jpg',
+    'DSC_3159.jpg',
+    'DSC_3168.jpg',
+    'DSC_3178.jpg',
+    'DSC_3190.jpg',
+    'DSC_3208.jpg',
+    'DSC_3218.jpg',
+    'DSC_3219.jpg',
+    'DSC_3223.jpg',
+    'DSC_3230.jpg',
+    'DSC_3253.jpg',
+    'DSC_3266.jpg',
+    'DSC_3269.jpg'
+]
 
 const workCarousel = document.getElementById('carousel-inner');
 
@@ -57,7 +82,7 @@ const renderCarousel = () =>
 const buildCarCard = (img, idx) => {
     return `<a class="custom-carousel-item" data-index="${idx}" aria-hidden="false" tabindex="0">
                 <div class="custom-carousel-img">
-                    <img src="./images/carousel/${img}" alt="${img.replace('.png', '')}">
+                    <img src="./images/carousel-mark/${img}" alt="${img.replace('.png', '')}">
                 </div>
             </a>`
 };
@@ -113,18 +138,25 @@ const buildServices = (img, header) => {
             </div>`
 }
 
-const buildWorkCarouselItem = (img, header) => {
-    return `<div class="carousel-item active">
-                <img src="./images/service-card/${img}" alt="${header}" class="d-block w-100">
+const buildWorkCarouselItem = (image, active) => {
+    return `<div class="carousel-item ${!active ? 'active' : ''}">
+                <img
+                 class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+                 width="800"
+                 height="400"
+                 src="./images/carousel/${image}"
+                 alt="${image}"
+                 class="d-block w-100"
+                >
             </div>`
 }
 const renderWorksCarousel = () => {
-    services.innerHTML = serviceViews.reduce((acc, view) => acc + buildWorkCarouselItem(view.img, view.header), '');
+    workCarousel.innerHTML = carouselImages.reduce((acc, image, idx) => acc + buildWorkCarouselItem(image, idx), '');
 }
 
 (function() {
     renderServices();
-    //renderWorksCarousel();
+    renderWorksCarousel();
     addEventListener("resize", () => resizeCarousel());
     renderCarousel();
     resizeCarousel();

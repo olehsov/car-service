@@ -1080,7 +1080,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap carousel.js
+   * Bootstrap carousel-mark.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -1091,7 +1091,7 @@
    */
 
   const NAME$c = 'carousel';
-  const DATA_KEY$8 = 'bs.carousel';
+  const DATA_KEY$8 = 'bs.carousel-mark';
   const EVENT_KEY$8 = `.${DATA_KEY$8}`;
   const DATA_API_KEY$5 = '.data-api';
   const ARROW_LEFT_KEY$1 = 'ArrowLeft';
@@ -1113,17 +1113,17 @@
   const CLASS_NAME_CAROUSEL = 'carousel';
   const CLASS_NAME_ACTIVE$2 = 'active';
   const CLASS_NAME_SLIDE = 'slide';
-  const CLASS_NAME_END = 'carousel-item-end';
-  const CLASS_NAME_START = 'carousel-item-start';
-  const CLASS_NAME_NEXT = 'carousel-item-next';
-  const CLASS_NAME_PREV = 'carousel-item-prev';
+  const CLASS_NAME_END = 'carousel-mark-item-end';
+  const CLASS_NAME_START = 'carousel-mark-item-start';
+  const CLASS_NAME_NEXT = 'carousel-mark-item-next';
+  const CLASS_NAME_PREV = 'carousel-mark-item-prev';
   const SELECTOR_ACTIVE = '.active';
-  const SELECTOR_ITEM = '.carousel-item';
+  const SELECTOR_ITEM = '.carousel-mark-item';
   const SELECTOR_ACTIVE_ITEM = SELECTOR_ACTIVE + SELECTOR_ITEM;
-  const SELECTOR_ITEM_IMG = '.carousel-item img';
-  const SELECTOR_INDICATORS = '.carousel-indicators';
+  const SELECTOR_ITEM_IMG = '.carousel-mark-item img';
+  const SELECTOR_INDICATORS = '.carousel-mark-indicators';
   const SELECTOR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-to]';
-  const SELECTOR_DATA_RIDE = '[data-bs-ride="carousel"]';
+  const SELECTOR_DATA_RIDE = '[data-bs-ride="carousel-mark"]';
   const KEY_TO_DIRECTION = {
     [ARROW_LEFT_KEY$1]: DIRECTION_RIGHT,
     [ARROW_RIGHT_KEY$1]: DIRECTION_LEFT
@@ -1183,7 +1183,7 @@
     nextWhenVisible() {
       // FIXME TODO use `document.visibilityState`
       // Don't call next when the page isn't visible
-      // or the carousel or its parent isn't visible
+      // or the carousel-mark or its parent isn't visible
       if (!document.hidden && isVisible(this._element)) {
         this.next();
       }
@@ -1262,9 +1262,9 @@
         }
 
         // If it's a touch-enabled device, mouseenter/leave are fired as
-        // part of the mouse compatibility events on first tap - the carousel
+        // part of the mouse compatibility events on first tap - the carousel-mark
         // would stop cycling until user tapped out of it;
-        // here, we listen for touchend, explicitly pause the carousel
+        // here, we listen for touchend, explicitly pause the carousel-mark
         // (as if it's the second time we tap on it, mouseenter compat event
         // is NOT fired) and after a timeout (to allow for mouse compatibility
         // events to fire) we explicitly restart cycling

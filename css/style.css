@@ -1363,7 +1363,7 @@ div.fancy-select ul.options li {
     position: relative;
     color: #fff;
     border-radius: 3rem;
-    background-color: #ff002b;
+    background-color: #41B4E6;
 }
 
 .btn:not(:disabled) .btn-blick {
@@ -1465,7 +1465,7 @@ div.fancy-select ul.options li {
     flex-shrink: 0;
     margin-right: 0.5rem;
     border-radius: 2px;
-    background-color: #ee1a24;
+    background-color: #41B4E6;
 }
 
 .rhide:checked~span .check-label-act {
@@ -1525,9 +1525,13 @@ div.fancy-select ul.options li {
 
 .auto-left {
     padding-top: 0;
-    position: sticky;
     top: 2rem;
     left: 0;
+}
+
+.carousel-inner {
+    border-radius: 50px;
+    background: #e4e4e4;
 }
 
 .mb2 {
@@ -1685,7 +1689,7 @@ div.fancy-select ul.options li {
 }
 .auto-right {
     width: 62%;
-    padding-top: 1rem;
+    padding: 1rem 10rem 0 10rem;
 }
 .auto {
     padding-top: 1rem;
@@ -1995,7 +1999,7 @@ div.fancy-select ul.options li {
 }
 
 .modal-call .wh-span {
-    background-color: #ff002b;
+    background-color: #41B4E6;
     padding: 0 0.4rem;
     line-height: 1.6;
 }
@@ -2060,7 +2064,7 @@ div.fancy-select ul.options li {
 }
 
 .offer-form__inp-bl .btn:hover {
-    background-color: #ff002b;
+    background-color: #41B4E6;
 }
 
 .offer-form__inp-bl .btn:hover span {
@@ -2091,6 +2095,7 @@ div.fancy-select ul.options li {
 
     .auto-right {
         width: 100%;
+        padding: 0;
     }
     .alt-container_v2 {
         padding: 0 3rem;
