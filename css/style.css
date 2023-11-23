@@ -608,6 +608,30 @@ header .contact-phone:hover {
     filter: grayscale(0);
 }
 
+.discounts {
+    padding: 3em 0;
+}
+
+.discounts .discounts-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.discounts .discounts-header {
+    max-width: 77rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.discounts .discounts-header h3 {
+    margin-bottom: 0.7rem;
+    font-size: 1.35rem;
+}
+
+
 .custom-carousel .custom-carousel-side:before {
     display: table;
     content: '';
