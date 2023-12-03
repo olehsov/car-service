@@ -432,9 +432,17 @@ header .contact-phone:hover {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+}
+
+.additional-explanation-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.additional-explanation-text .button-block {
+    z-index: 2;
 }
 
 .explanation-content .explanation-instruction {
@@ -453,6 +461,7 @@ header .contact-phone:hover {
     position: absolute;
     top: 7rem;
     left: -7rem;
+    z-index: 2;
 }
 
 .support-marks {
@@ -608,6 +617,15 @@ header .contact-phone:hover {
     filter: grayscale(0);
 }
 
+.carousel-control-prev, .carousel-control-next {
+    transition: background-color 0.5s;
+}
+
+.carousel-control-prev:hover, .carousel-control-next:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+
 .discounts {
     padding: 3em 0;
 }
@@ -696,6 +714,8 @@ header .contact-phone:hover {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    align-self: stretch;
+    max-width: 33.33%;
 }
 
 .short-description-option .option-image-container {
@@ -717,6 +737,29 @@ header .contact-phone:hover {
 
 .short-description-option .option-text {
     padding-left: 1.6rem;
+    text-align: center;
+    margin-right: 1em;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.short-description-option .option-text .option-icon {
+    width: 100%;
+    max-width: 160px;
+    padding: 1em;
+    opacity: 0.8;
+}
+
+.heart-ico {
+    filter: invert(38%) sepia(96%) saturate(3556%) hue-rotate(342deg) brightness(98%) contrast(96%);
+}
+
+.wifi-ico {
+    filter: invert(27%) sepia(53%) saturate(2490%) hue-rotate(194deg) brightness(102%) contrast(109%);
 }
 
 .short-description-option .option-text .header {
@@ -866,15 +909,6 @@ header .contact-phone:hover {
     height: 1px;
     -webkit-transition: all .3s;
     transition: all .3s;
-}
-
-.serv-item.serv-item_alt.map {
-    padding: 0;
-}
-
-.serv-item.serv-item_alt.map iframe {
-    height: 100%;
-    width: 100%;
 }
 
 .col-center {
@@ -1713,8 +1747,14 @@ div.fancy-select ul.options li {
 }
 .auto-right {
     width: 62%;
-    padding: 1rem 10rem 0 10rem;
+    padding: 0;
 }
+
+#carouselExampleControls {
+    width: 800px;
+    margin: auto;
+}
+
 .auto {
     padding-top: 1rem;
     padding-bottom: 4rem;
@@ -2096,6 +2136,43 @@ div.fancy-select ul.options li {
     font-size: .95rem;
 }
 
+.map-section {
+    padding-left: 11rem;
+    padding-right: 4.2rem;
+    margin: auto;
+    height: 500px;
+}
+
+.map-section iframe {
+    border-radius: 25px;
+}
+
+.map-section .map {
+    padding: 0;
+    height: 70%;
+}
+
+.map-section .map iframe {
+    height: 100%;
+    width: 100%;
+}
+
+.map-section .map-header {
+    height: 15%;
+}
+
+.map-section .map-header h2 {
+    font-size: 3.3rem;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1700px){
+    #carouselExampleControls {
+        width: 600px;
+        margin: auto;
+    }
+}
+
 @media screen and (max-width: 1300px) {
     header .logo-block {
         margin-right: 0;
@@ -2169,11 +2246,19 @@ div.fancy-select ul.options li {
         justify-content: center;
         align-content: center;
     }
+    .map-section {
+        padding-left: 4.2rem;
+        text-align: center;
+    }
 }
 
 @media (max-width: 900px) {
     .modal-norm {
         width: 19.6rem;
+    }
+
+    #carouselExampleControls {
+        width: 450px;
     }
 
     .offer__cont {
@@ -2413,11 +2498,22 @@ div.fancy-select ul.options li {
         font-size: .7rem;
         white-space: nowrap;
     }
+
+    .additional-explanation-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
 
 @media (max-width: 567px) {
     .modal-norm {
         width: 90vw;
+    }
+
+    #carouselExampleControls {
+        width: 320px;
     }
 
     .t54, .title-lg, .title {

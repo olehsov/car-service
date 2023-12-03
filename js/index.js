@@ -67,7 +67,7 @@ const carousel = document.getElementById('carousel');
 const services = document.getElementById('serv-card');
 let carouselLeftOffset = 0;
 const toGoogleMaps = () => window.open(GEO_LINK, '_blank');
-const toTelegram = () => window.open(`https://t.me/olehAmeica`)
+const toTelegram = () => window.open(`https://t.me/DaCarServicecv`)
 const toCall = () => window.open(`tel:${PHONE}`)
 const toInstagram = () => window.open('https://www.instagram.com/dacar_service.cv/', '_blank')
 const openSideBar = () => sideBarForm.classList.add('opened');
@@ -111,8 +111,10 @@ const resizeCarousel = () => {
 }
 
 const renderServices = () => {
-    const servicesHtml = serviceViews.reduce((acc, view) => acc + buildServices(view.img, view.header), '');
-    services.innerHTML = servicesHtml + services.innerHTML;
+    services.innerHTML = serviceViews.reduce(
+        (acc, view) => acc + buildServices(view.img, view.header),
+        ''
+    );
 }
 
 const buildServices = (img, header) => {
