@@ -76,6 +76,13 @@ const closeSideBar = () => sideBarForm.classList.remove('opened');
 const openModal = () => modal.style.display = 'block';
 const closeModal = () => modal.style.display = 'none';
 
+const scrollToTop = () => {
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0,0);
+};
+
 const renderCarousel = () =>
     carousel.innerHTML = marLogos.map(buildCarCard).reduce((accumulator, card) => accumulator + card, '');
 
@@ -87,7 +94,7 @@ const buildCarCard = (img, idx) => {
             </a>`
 };
 
-const carouselItemNumber = () => Math.floor(innerWidth * 0.75 / MOVE_SIZE);
+const carouselItemNumber = () => Math.floor((innerWidth - 50) * 0.75 / MOVE_SIZE);
 const updateCarouselOffset = () => carousel.style.transform = `translate3d(${carouselLeftOffset}px, 0px, 0px)`
 
 const carouselPrevious = () => {
@@ -125,16 +132,6 @@ const buildServices = (img, header) => {
                 <div class="serv-item__cont col-vcenter">
                     <div class="serv-item__top col-vcenter">
                         <a class="serv-item__header t38 mb2 fwb">${header}</a>
-                    </div>
-                    <div class="serv-bot sb-center">
-                        <div class="serv-bot__right col-center">
-                            <div class="serv-bot__link white t16 row-vcenter">
-                                <a class="serv-bot__link-img mrm">
-                                    <img onclick="toTelegram()" src="./images/tg-ico.png" alt="">
-                                </a>
-                                <a onclick="toCall()" class="dotted white dotted_d phone-link">${PHONE}</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>`
@@ -199,4 +196,22 @@ const sendMessage = async (phone, name) => {
         await sendMessage(userPhone)
     })
 })();
+
+function changeTitle(element, title) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                document.getElementById('side-text-header').innerText = String.prototype.toUpperCase.call(title);
+            }
+        });
+    }, { threshold: 0.5 }); // Adjust the threshold as needed
+
+    observer.observe(element);
+}
+
+// Usage
+document.addEventListener("DOMContentLoaded", function() {
+    const elementsToObserve = Array.from(document.getElementsByTagName('h2')); // Change this selector to target your specific element
+    elementsToObserve.forEach(elementToObserve => changeTitle(elementToObserve, elementToObserve.getAttribute('data-title')));
+});
 

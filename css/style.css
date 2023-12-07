@@ -46,6 +46,15 @@ ul {
     color: #fff;
 }
 
+.red-high-light {
+    color: #ff002b;
+    font-weight: bold;
+}
+
+.red-image-high-light {
+    filter: invert(12%) sepia(71%) saturate(6818%) hue-rotate(344deg) brightness(105%) contrast(113%);;
+}
+
 .services-tab {
     padding-top: 2rem;
     padding-bottom: 4rem;
@@ -65,8 +74,24 @@ img {
 
 header {
     padding: 1.6rem 0 0 0;
-    position: relative;
-    z-index: 4;
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    border-bottom: solid #b6b6b6 1px;
+    z-index: 30;
+}
+
+footer {
+    height: 50px;
+    background: #ffffff;
+    border-top: solid #b6b6b6 1px;
+    width: calc(100vw - 30%);
+    margin: 0 auto;
+}
+
+footer .copyrights {
+    text-align: center;
+    padding-top: 15px;
 }
 
 header .header-container {
@@ -159,9 +184,65 @@ header .header-container .header-content {
         opacity: .4;
     }
 }
+
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.main-content {
+    width: calc(100% - 50px);
+}
+.main-side-bar {
+    width: 50px;
+    position: relative;
+}
+.main-side-bar aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 550px;
+    justify-content: space-between;
+    position: sticky;
+    top: calc(100vh - 550px);
+    cursor: pointer;
+}
+
+.main-side-bar aside .vertical-text {
+    writing-mode: vertical-rl;
+    color: rgba(122, 121, 121, 0.9);
+    min-height: 30%;
+}
+
+.main-side-bar aside .line {
+    height: 1px;
+    border-radius: 30px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    width: 300px;
+}
+
+progress {
+    background: rgb(128, 128, 128, .7);
+}
+
+progress::-webkit-progress-value {
+    background: #ff002b;
+}
+
+progress::-webkit-progress-bar {
+    background: transparent;
+}
+
+.main-side-bar .bi.bi-mouse {
+    font-size: 25px;
+}
+
 .social-media-question {
     margin-right: 1rem;
 }
+
 .social-media-section .social-media-icon-selection {
     width: 2.5rem;
     height: 2.5rem;
@@ -319,7 +400,7 @@ header .contact-phone:hover {
     width: 100vw;
     height: 100%;
     background: #0B0B0A;
-    z-index: 10;
+    z-index: 31;
     transition: left 0.3s ease-in;
     transition-delay: 0s;
 }
@@ -630,12 +711,97 @@ header .contact-phone:hover {
     padding: 3em 0;
 }
 
-.discounts .discounts-content {
+.ag-courses_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: stretch;
+
+    padding: 50px 100px;
+}
+.ag-courses_item {
+    margin: 0 15px 30px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+    width: 100%;
+}
+.ag-courses-item_link {
+    display: block;
+    padding: 30px 20px;
+    background-color: #ffffff;
+
+    overflow: hidden;
+
+    position: relative;
+}
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none;
+    color: #000000;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+}
+.ag-courses-item_title {
+    min-height: 87px;
+    margin: 0 0 25px;
+
+    overflow: hidden;
+
+    font-weight: bold;
+    font-size: 21px;
+    color: #000000;
+
+    z-index: 2;
+    position: relative;
+}
+
+.ag-courses-item_description {
+    position: relative;
+    z-index: 2;
+}
+
+.ag-courses-item_date-box {
+    font-size: 18px;
+    color: #000000;
+
+    z-index: 2;
+    position: relative;
+}
+.ag-courses-item_date {
+    font-weight: bold;
+    color: #5d718e;
+
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease
+}
+.ag-courses-item_bg {
+    height: 128px;
+    width: 380px;
+    background-color: #5d718e;
+
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -300px;
+
+    border-radius: 50%;
+
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+    background-color: #4c4c5a;
 }
 
 .discounts .discounts-header {
@@ -803,14 +969,28 @@ header .contact-phone:hover {
 }
 
 .services-tab .serv-card .serv-item {
+    position: relative;
     margin-left: .62%;
     margin-right: .62%;
     width: 32%;
-    padding: 2rem 3rem;
+    padding: 0 0 15px 15px;
     margin-bottom: 1.5rem;
     -webkit-box-shadow: 0 0 59px rgba(20, 20, 20, .2);
     box-shadow: 0 0 59px rgba(20, 20, 20, .2);
     border-radius: 1rem;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.services-tab .serv-card .serv-item::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0),rgba(0, 0, 0, 1));
+    transition: background 0.3s ease;
 }
 
 .st-bg {
@@ -872,16 +1052,15 @@ header .contact-phone:hover {
     -webkit-box-pack: justify;
     display: flex;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: flex-end;
     flex-direction: column;
 }
 
 .services-tab .serv-card .serv-item .serv-item__top {
-    margin-bottom: 1.5rem;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    padding-right: 2rem;
+    padding-right: .5rem;
 }
 
 .services-tab .serv-card .serv-item .serv-bot {
@@ -1181,7 +1360,6 @@ header .contact-phone:hover {
 }
 
 .serv-item__top {
-    margin-bottom: 1.5rem;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
@@ -1751,7 +1929,7 @@ div.fancy-select ul.options li {
 }
 
 #carouselExampleControls {
-    width: 800px;
+    width: 600px;
     margin: auto;
 }
 
@@ -2157,10 +2335,6 @@ div.fancy-select ul.options li {
     width: 100%;
 }
 
-.map-section .map-header {
-    height: 15%;
-}
-
 .map-section .map-header h2 {
     font-size: 3.3rem;
     font-weight: 700;
@@ -2168,12 +2342,19 @@ div.fancy-select ul.options li {
 
 @media screen and (max-width: 1700px){
     #carouselExampleControls {
-        width: 600px;
         margin: auto;
     }
 }
 
 @media screen and (max-width: 1300px) {
+    .services-tab .services-header {
+        text-align: center;
+    }
+
+    .services-tab .services-header div {
+        font-size: 1rem;
+    }
+
     header .logo-block {
         margin-right: 0;
     }
@@ -2220,6 +2401,7 @@ div.fancy-select ul.options li {
 
     .short-description-options .short-description-option {
         align-self: center;
+        padding: 0;
     }
 
     .short-description-option .option-image-container {
@@ -2253,6 +2435,9 @@ div.fancy-select ul.options li {
 }
 
 @media (max-width: 900px) {
+    .map-section .map-header h2 {
+        font-size: 1.3rem;
+    }
     .modal-norm {
         width: 19.6rem;
     }
@@ -2508,12 +2693,24 @@ div.fancy-select ul.options li {
 }
 
 @media (max-width: 567px) {
+    .carousel-inner {
+        height: 260px;
+    }
+    .background-image-selection {
+        padding: 0;
+        margin: 0;
+    }
+
+    .short-service-description .short-description-header {
+        padding: 1em 0 0 0;
+    }
+
     .modal-norm {
         width: 90vw;
     }
 
     #carouselExampleControls {
-        width: 320px;
+        width: 100%;
     }
 
     .t54, .title-lg, .title {
@@ -2524,4 +2721,37 @@ div.fancy-select ul.options li {
         font-size: 1rem;
     }
 }
+
+@media only screen and (max-width: 979px) {
+    .ag-courses-item_title {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .ag-format-container {
+        width: 96%;
+    }
+    .ag-courses_box {
+        padding: 50px 0;
+    }
+}
+@media only screen and (max-width: 639px) {
+    .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+        font-size: 17px;
+    }
+    .ag-courses-item_link {
+        padding: 22px 40px;
+    }
+    .ag-courses-item_date-box {
+        font-size: 16px;
+    }
+
+    .ag-courses-item_description {
+        font-size: 12px;
+    }
+}
+
 
